@@ -1,68 +1,420 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+/* VARIABLES GENERALES */
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+
+p {
+  color: #000000;
+  font-size: 2rem;
+}
+
+a {
+  text-decoration: none;
+}
+
+img,
+picture {
+  width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Lato', sans-serif;
+  margin: calc(5rem / 2) 0;
+  font-weight: 300;
+  text-align: center;
+
 }
 
 h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+  font-size: 3.8rem;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+h2 {
+  font-size: 3.4rem;
+}
+
+h3 {
+  font-size: 3rem;
+}
+
+h4 {
+  font-size: 2.6rem;
+}
+
+.contenedor {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+/* HEADER */
+
+header{
+  background-color: black;
+  padding: 2rem 0 2rem 0;
+}
+
+header p{
+  margin: 0;
+  color: white;
+  font-size: 5rem;
+}
+
+header .contenedor{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .navegacion a{
+  margin-right: 3rem;
+  font-size: 2rem;
+  color: white;
+}
+
+.span-header{
+  color: orange;
+  font-weight: bold;
+}
+
+/* FOOTER */
+
+
+.footer {
+  background-color: black;
+  margin: 5rem 0 0 0;
+}
+
+.footer .navegacion a {
+  margin-right: 3rem;
+  font-size: 2rem;
+  color: white;
+
+}
+
+.footer p {
+  color: orange;
+  font-weight: bold;
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* FORMULARIO */
+
+.subtitulo{
+  color: black;
+  text-transform: uppercase;
+}
+
+.formulario p {
+  font-size: 1.4rem;
+  color: grey;
+  margin: 2rem 0 0 0;
+}
+
+.formulario legend {
+  font-size: 2rem;
+  color: grey;
+}
+
+.formulario label {
+  font-weight: bold;
+  text-transform: uppercase;
+  display: block;
+}
+
+.formulario input:not([type="submit"]),
+.formulario textarea,
+.formulario select {
+
+  padding: 1rem;
+  display: block;
+  width: 100%;
+  background-color: white;
+  border: 1px solid grey;
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+}
+
+.formulario textarea {
+  height: 20rem;
+}
+
+.formulario .sublimado p {
+  margin-top: 0;
+}
+
+.formulario .sublimado .similitud {
+  max-width: 30rem;
+  display: flex;
+  align-items: center;
+}
+
+
+.formulario .sublimado .similitud input{
+  margin: 0;
+}
+
+form .boton-amarillo{
+  margin-top: 3rem;
+  padding: 1rem;
+  font-size: 2rem;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  background-color: orange;
+  text-transform: uppercase;
+  font-weight: bold;
+  
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+/* INDEX */
+
+.titulo{
+  font-size: 6rem;
+}
+
+.titulo-icono{
+  color: black;
+}
+
+.anuncio-foto{
+  display: block;
+  width: 100%;
+}
+
+.iconos-conocenos{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3,1fr);
+}
+
+.icono{
+  text-align: center;
+}
+
+.icono h2{
+  text-transform: uppercase;
+  font-weight: bold;
+  
+}
+
+.contenedor-anuncios{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.anuncio{
+  background-color: #eee;
+  border: 1px solid #404040;
+  margin-bottom: 2rem;
+}
+
+.anuncio .contenido-anuncio{
+  padding: 2rem;
+}
+
+.precio{
+  font-weight: 700;
+  font-size: 3rem;
+  text-align: center;
+  font-size: 5rem;
+  margin-top: 1rem;
+}
+
+.boton-amarillo{
+  border: none;
+  text-align: center;
+  background-color: orange;
+  text-decoration: none;
+  padding: 1rem 1rem;
+  display: block;
+  color: black;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.seccion-imagen{
+  background-image: url(/img/Mochila-banner.png);
+  background-position: 50%;
+  background-size: cover;
+  padding: 10rem;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.seccion-imagen p, h2{
+  color: white;
+  text-transform: uppercases;
+  font-size: 3.5rem;
+}
+
+.boton-verde{
+  border: none;
+  text-align: center;
+  background-color: green;
+  text-decoration: none;
+  padding: 1rem 1rem;
+  display: block;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.centrado{
+  display: flex;
+  justify-content: center;
+}
+
+.centrado .boton-verde{
+  padding: 1.5rem 5rem;
+}
+
+.txt-precios{
+  text-align: center;
+}
+
+.precios{
+  display: grid;
+  gap: 5rem;
+  grid-template-columns: repeat(2,1fr);
+}
+
+.lista{
+  background-color: white;
+  border: 1px solid;
+}
+
+.lista ul{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lista li:nth-child(odd){
+  background-color: #eee;
+}
+
+.articulos li{
+  padding: 1rem;
+  text-transform: capitalize;
+}
+
+.articulo{
+  display: flex;
+  justify-content: space-between;
+}
+
+.articulo-nombre{
+  font-weight: 700;
+  text-transform: capitalize;
+}
+
+.articulo-precio{
+  color: orange;
+  font-weight: bold;
+}
+
+
+/* EMPRESA */
+
+.empresa-contenido{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.comentarios{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.comentario{
+  background-color: orange;
+  border-radius: 2rem;
+  font-size: 3rem;
+  padding: 2rem;
+}
+
+.comentario p{
+  color: white;
+}
+
+.nombre{
+  display: flex;
+  align-items: center;
+  justify-content: right;  
+}
+
+
+/* GALERIA */
+
+.galeria{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.producto{
+  background-color: #eee;
+  margin: 0 2rem;
+  padding: 1rem;
+  text-align: center;
+}
+
+.producto-nombre{
+  font-size: 2.7rem;
+  text-transform: uppercase;
+  margin: 3rem 0 0 0;
+}
+
+.producto-precio{
+  font-size: 3.5rem;
+  font-weight: bold;
+  color: orange;
+  margin: 0;
+}
+
+
+/* PRODUCTO */
+
+.descripcion{
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+
+/*MEDIA QUERIE*/
+
+@media screen and (max-width: 767px){
+  header .contenedor, footer .contenedor{
+      display: block;
+      text-align: center;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  .iconos-conocenos, .galeria, .contenedor-anuncios, .empresa-contenido
+  , .comentarios, .descripcion{
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: repeat(1, 1fr);
   }
 }

@@ -10,9 +10,6 @@ import Gallery from './pages/Gallery';
 function App() {
   return (
     <Router>
-      <nav>
-        <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/contact">Contact</Link> | <Link to="/gallery">Gallery</Link>
-      </nav>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
