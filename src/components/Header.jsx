@@ -3,13 +3,13 @@ const Header = () => {
     return (
 
         <header>
-        <div class="contenedor">
+        <div className="contenedor">
             <a href="index.html">
-                <p>Todo<span class="span-header">Mochilas</span></p>
+                <p>Todo<span className="span-header">Mochilas</span></p>
             </a>
 
 
-            <nav class="navegacion">
+            <nav className="navegacion">
                 <a href="#">Nosotros</a>
                 <a href="#">Galeria</a>
                 <a href="#">Contacto</a>

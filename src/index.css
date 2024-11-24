@@ -252,7 +252,7 @@ form .boton-amarillo{
 }
 
 .seccion-imagen{
-  background-image: url(/img/Mochila-banner.png);
+  background-image: url(src/assets/images/Mochila-banner.png);
   background-position: 50%;
   background-size: cover;
   padding: 10rem;
