@@ -7,6 +7,7 @@ import MasVendidos from "../components/MasVendidos";
 import ListadoPrecios from "../components/ListadoPrecios";
 
 const Home = () => {
+
   return (
     <div>
       <Header />
