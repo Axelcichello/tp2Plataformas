@@ -1,18 +1,20 @@
+import { Link } from "react-router-dom";
+
 const Header = () => {
     
     return (
 
         <header>
         <div className="contenedor">
-            <a href="index.html">
+            <Link to="/">
                 <p>Todo<span className="span-header">Mochilas</span></p>
-            </a>
+            </Link>
 
 
             <nav className="navegacion">
-                <a href="#">Nosotros</a>
-                <a href="#">Galeria</a>
-                <a href="#">Contacto</a>
+                <Link to="/About">Nosotros</Link>
+                <Link to="/Gallery">Galeria</Link>
+                <Link to="/Contact">Contacto</Link>
             </nav>
         </div>
     </header>
