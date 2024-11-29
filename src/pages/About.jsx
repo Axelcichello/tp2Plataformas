@@ -8,16 +8,16 @@ const About = () => {
     <div>
       <Header />
 
-      <main class="contenedor">
+      <main className="contenedor">
         <h1>CONOCE NUESTRA HISTORIA</h1>
 
-        <div class="empresa-contenido">
-          <div class="imagen">
+        <div className="empresa-contenido">
+          <div className="imagen">
             <img src={fabrica} alt="imagen-empresa" />
           </div>
 
-          <div class="texto-empresa">
-            <h2 class="subtitulo">Llevamos 75 años en el rubro</h2>
+          <div className="texto-empresa">
+            <h2 className="subtitulo">Llevamos 75 años en el rubro</h2>
 
             <p>
               Desde la decada del 40, especificamente en el año 1948, nos
@@ -37,19 +37,19 @@ const About = () => {
 
       <section>
 
-        <h2 class="subtitulo">Reconocimiento</h2>
-        <div class="contenedor">
-            <div class="comentarios">
+        <h2 className="subtitulo">Reconocimiento</h2>
+        <div className="contenedor">
+            <div className="comentarios">
 
-                <div class="tarjeta">
+                <div className="tarjeta">
                     <h3>Sergio Aguero</h3>
-                    <div class="comentario">
+                    <div className="comentario">
                         <p> La marca me ayudo muchisimo durante mis ultimos años en Argentina con mi hijo, ademas de
                             proposionarme las mochilas a medida y con estanpados personalizados me ofrecieron asesores
                             para los articulos de libreria.</p>
 
-                        <p class="nombre"><svg xmlns="http://www.w3.org/2000/svg"
-                                class="nombre-j icon icon-tabler icon-tabler-brand-twitter-filled" width="30"
+                        <p className="nombre"><svg xmlns="http://www.w3.org/2000/svg"
+                                className="nombre-j icon icon-tabler icon-tabler-brand-twitter-filled" width="30"
                                 height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -61,13 +61,13 @@ const About = () => {
                     </div>
                 </div>
 
-                <div class="tarjeta">
+                <div className="tarjeta">
                     <h3>Nicolas Cabre</h3>
-                    <div class="comentario">
+                    <div className="comentario">
                         <p>Sin duda los mejores, desde el principio hasta el final de la entrega del producto siempre con el mejor trato. Este es el tipo de empresas que a uno le gusta seguir, siempre con la mejor predisposicion y con ganas de hacer el trabajo.</p>
 
-                            <p class="nombre"><svg xmlns="http://www.w3.org/2000/svg"
-                                class="nombre-j icon icon-tabler icon-tabler-brand-twitter-filled" width="30"
+                            <p className="nombre"><svg xmlns="http://www.w3.org/2000/svg"
+                                className="nombre-j icon icon-tabler icon-tabler-brand-twitter-filled" width="30"
                                 height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />
@@ -79,13 +79,13 @@ const About = () => {
                     </div>
                 </div>
 
-                <div class="tarjeta">
+                <div className="tarjeta">
                     <h3>Mirtha Legrand</h3>
-                    <div class="comentario">
+                    <div className="comentario">
                         <p>Mis nietas y bisnietas quedaron super contentas con los pedidos, quedamos en pedirles mas para la segunda etapa del año. Los materiales que usan y la calidad del estampado no los vi en otro lado. 10/10 !</p>
 
-                            <p class="nombre"><svg xmlns="http://www.w3.org/2000/svg"
-                                class="nombre-j icon icon-tabler icon-tabler-brand-twitter-filled" width="30"
+                            <p className="nombre"><svg xmlns="http://www.w3.org/2000/svg"
+                                className="nombre-j icon icon-tabler icon-tabler-brand-twitter-filled" width="30"
                                 height="30" viewBox="0 0 24 24" stroke-width="1.5" stroke="#2c3e50" fill="none"
                                 stroke-linecap="round" stroke-linejoin="round">
                                 <path stroke="none" d="M0 0h24v24H0z" fill="none" />

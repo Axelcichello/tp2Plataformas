@@ -2,17 +2,26 @@ import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import mochila6 from "../assets/images/mochila6.jpg";
+import { useParams } from "react-router-dom";
 
 const Product = () => {
+  const { id } = useParams(); // Obtener el ID de la URL
+
+  // Aquí podrías buscar los datos del producto en `localStorage` u otra fuente
+  const productosGuardados =
+    JSON.parse(localStorage.getItem("productos")) || [];
+  const producto = productosGuardados.find((item) => item.id === parseInt(id));
+
+  console.log(producto);
+
   return (
     <div>
       <Header />
 
       <main className="contenedor">
-
-        <h1>Mochila Porta Notebook XL</h1>
+        <h1>{producto.nombre}</h1>
         <div className="descripcion">
-          <img src={mochila6} alt="Mochila" />
+          <img src={producto.imagen} alt={producto.nombre} />
 
           <div className="mochila-descripcion">
             <p>
@@ -22,6 +31,8 @@ const Product = () => {
               Peso liviano, económica y fácil de transportar.{" "}
               <strong>IMPERMEABLE</strong>.
             </p>
+
+            <p>{producto.precio}</p>
 
             <form action="#" className="formulario">
               <select name="talle" id="talle">

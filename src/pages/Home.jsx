@@ -6,14 +6,14 @@ import BannerHome from "../components/BannerHome";
 import MasVendidos from "../components/MasVendidos";
 import ListadoPrecios from "../components/ListadoPrecios";
 
-const Home = () => {
+const Home = () => {  
 
   return (
     <div>
       <Header />
 
       <main>
-        <h1 class="titulo">Somos TodoMochilas</h1>
+        <h1 className="titulo">Somos TodoMochilas</h1>
         <IconosConocenos />
       </main>
 
