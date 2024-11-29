@@ -25,14 +25,10 @@ const Product = () => {
 
           <div className="mochila-descripcion">
             <p>
-              Mochila reforzada con 4 compartimientos para guardar útiles y
-              objetos. Espacio especial para notebooks y teclado. Laterales para
-              guardar botellas doblemente reforzados para evitar que se rompan.
-              Peso liviano, económica y fácil de transportar.{" "}
-              <strong>IMPERMEABLE</strong>.
+              {producto.descripcion}
             </p>
 
-            <p>{producto.precio}</p>
+            <p>${producto.precio}</p>
 
             <form action="#" className="formulario">
               <select name="talle" id="talle">

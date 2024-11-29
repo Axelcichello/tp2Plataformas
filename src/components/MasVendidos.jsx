@@ -1,47 +1,60 @@
-import React from 'react';
-import mochila1 from '../assets/images/mochila1.jpg';
-import mochila2 from '../assets/images/mochila2.jpg';
-import mochila3 from '../assets/images/mochila3.jpg';
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import mochila1 from "../assets/images/mochila1.jpg";
+import mochila2 from "../assets/images/mochila2.jpg";
+import mochila3 from "../assets/images/mochila3.jpg";
 
 const MasVendidos = () => {
+  const [productosMasCaros, setProductosMasCaros] = useState([]);
+
+  useEffect(() => {
+    // Recupera los productos desde el localStorage
+    const productos = JSON.parse(localStorage.getItem("productos")) || [];
+
+    // Verifica que el array de productos no esté vacío
+    if (productos.length > 0) {
+      // Ordena los productos por el precio de forma descendente y toma los tres primeros
+      const productosOrdenados = productos
+        .sort((a, b) => b.precio - a.precio)
+        .slice(0, 3);
+      setProductosMasCaros(productosOrdenados);
+    }
+  }, []);
+
+  console.log(JSON.parse(localStorage.getItem("productos")));
+
   return (
     <section className="contenedor">
       <h2 className="subtitulo">Modelos más vendidos</h2>
 
       <div className="contenedor-anuncios">
-        <div className="anuncio">
-          <img className="anuncio-foto" src={mochila1} alt="Mochila Escolar P/ Universidad" />
-          <div className="contenido-anuncio">
-            <h3>Mochila Escolar P/ Universidad</h3>
-            <p>Mochila en variantes de colores ideal para estudiantes universitarios o secundarios.</p>
-            <p className="precio">$6300</p>
-            <a href="producto.html" className="boton-amarillo">Ver Mochila</a>
-          </div>
-        </div>
-
-        <div className="anuncio">
-          <img className="anuncio-foto" src={mochila2} alt="Mochila Escolar Doble Cierre" />
-          <div className="contenido-anuncio">
-            <h3>Mochila Escolar Doble Cierre</h3>
-            <p>Doble cierre para guardar pequeños útiles. Descuento en efectivo solo en este modelo y color.</p>
-            <p className="precio">$6200</p>
-            <a href="producto.html" className="boton-amarillo">Ver Mochila</a>
-          </div>
-        </div>
-
-        <div className="anuncio">
-          <img className="anuncio-foto" src={mochila3} alt="Mochila Anti Robo Talle Único" />
-          <div className="contenido-anuncio">
-            <h3>Mochila Anti Robo Talle Único</h3>
-            <p>Para llevar notebooks y consolas de videojuegos, impermeable. Con sistema de rastreo SMS.</p>
-            <p className="precio">$8500</p>
-            <a href="producto.html" className="boton-amarillo">Ver Mochila</a>
-          </div>
-        </div>
+        {productosMasCaros.length > 0 ? (
+          productosMasCaros.map((producto) => (
+            <div className="anuncio" key={producto.id}>
+              <img
+                className="anuncio-foto"
+                src={producto.imagen}
+                alt={producto.nombre}
+              />
+              <div className="contenido-anuncio">
+                <h3>{producto.nombre}</h3>
+                <p>{producto.descripcion}</p>
+                <p className="precio">${producto.precio}</p>
+                <Link to={`/Product/${producto.id}`} className="boton-amarillo">
+                  Ver Producto
+                </Link>
+              </div>
+            </div>
+          ))
+        ) : (
+          <p>No hay productos disponibles.</p>
+        )}
       </div>
 
       <div className="centrado">
-        <a href="#" className="boton-verde">Ver Todas</a>
+        <Link to="/Gallery" className="boton-verde">
+          Ver Todas
+        </Link>
       </div>
     </section>
   );

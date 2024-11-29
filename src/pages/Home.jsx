@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import IconosConocenos from "../components/IconosConocenos";
 import BannerHome from "../components/BannerHome";
 import MasVendidos from "../components/MasVendidos";
-import ListadoPrecios from "../components/ListadoPrecios";
 
 const Home = () => {  
 
@@ -20,7 +19,6 @@ const Home = () => {
       <BannerHome />
       <MasVendidos />
 
-      <ListadoPrecios />
 
       <Footer />
     </div>

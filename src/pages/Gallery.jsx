@@ -29,7 +29,7 @@ const Gallery = () => {
                 <img src={producto.imagen} alt={producto.nombre} />
                 <div className="info-producto">
                   <p className="producto-nombre">{producto.nombre}</p>
-                  <p className="producto-precio">{producto.precio}</p>
+                  <p className="producto-precio">${producto.precio}</p>
 
                   <Link to={`/Product/${producto.id}`} className="boton-amarillo">
                     Ver Producto

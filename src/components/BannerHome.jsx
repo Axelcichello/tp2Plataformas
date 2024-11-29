@@ -1,14 +1,15 @@
-import React from 'react'
+import React from 'react';
 
 const BannerHome = () => {
   return (
     <section className="seccion-imagen">
-        <h2>¿Estas buscando la mochila ideal?</h2>
-        <p>Consultanos por nuestros modelos personalizados y a medida</p>
-
-        <a href="#" className="boton-amarillo">Contactanos</a>
+      <div className="overlay">
+        <h2 className="titulo-banner">¿Estás buscando la mochila ideal?</h2>
+        <p className="subtitulo-banner">Consúltanos por nuestros modelos personalizados y a medida</p>
+        <a href="#" className="boton-amarillo">Contáctanos</a>
+      </div>
     </section>
-  )
-}
+  );
+};
 
-export default BannerHome
+export default BannerHome;
