@@ -445,3 +445,23 @@ form .boton-amarillo{
       grid-template-columns: repeat(1, 1fr);
   }
 }
+
+/*ADMIN*/
+.admin-panel main {
+  padding: 4rem 0;
+}
+.admin-panel .formulario {
+  margin-bottom: 4rem;
+}
+
+/* Si quieres personalizar algo más para diferenciarlos */
+.agregar-usuario .formulario,
+.agregar-producto .formulario {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.agregar-usuario .boton-amarillo,
+.agregar-producto .boton-amarillo {
+  background-color: #ff9800; /* Un color naranja más vibrante si lo prefieres */
+}
