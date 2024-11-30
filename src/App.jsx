@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Product from './pages/Product';
 import Login from './pages/Login';
+import Signup from './pages/signup';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/product/:id" element={<Product />} />
         <Route path="/Login" element={<Login />} />
+        <Route path="/Signup" element={<Signup />} />
       </Routes>
     </Router>
   );

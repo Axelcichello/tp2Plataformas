@@ -1,14 +1,30 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import '../LoginForm.css'; // Archivo CSS para los estilos
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Email:', email);
-    console.log('Password:', password);
+
+    // Obtener la lista de usuarios del localStorage
+    const users = JSON.parse(localStorage.getItem('usuarios')) || [];
+
+    // Buscar el usuario que coincida con el email y la contraseña
+    const user = users.find(user => user.email === email && user.password === password);
+
+    if (user) {
+      if (user.esAdmin) {
+        navigate('/admin');
+      } else {
+        navigate('/gallery'); // Redirige a la página de inicio o la página de usuario
+      }
+    } else {
+      alert('Credenciales inválidas');
+    }
   };
 
   return (

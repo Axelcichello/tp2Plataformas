@@ -85,11 +85,20 @@ const Header = () => {
       descripcion:
         "Morral versátil con un diseño sencillo y práctico para llevar tus cosas esenciales. Ideal para uso diario o excursiones cortas.",
     },
-  ];
+  ]
+  const usuarios = [
+    {
+      id: 1,
+      nombre: "Juan",
+      email: "juan@gmail.com",
+      password: "juan",
+      esAdmin: true,}];
 
-  // Convertir a JSON y guardar en localStorage
-  localStorage.setItem("productos", JSON.stringify(productos));
-  console.log("Productos cargados en localStorage");
+      // Convertir a JSON y guardar en localStorage
+      localStorage.setItem("usuarios", JSON.stringify(usuarios));
+      console.log("Admins cargados en localStorage");
+      localStorage.setItem("productos", JSON.stringify(productos));
+      console.log("Productos cargados en localStorage");
 
   return (
     <header>
