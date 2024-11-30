@@ -7,10 +7,42 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const usuarios = [
+    {
+      id: 1,
+      nombre: "admin",
+      correo: "admin@admin.com",
+      password: "admin",
+      rol: 1 //Rol de administrador
+    },
+    {
+      id: 2,
+      nombre: "Hernan Crespo",
+      correo: "hernancrespo@gmail.com",
+      password: "1234",
+      rol: 2 //Rol de cliente
+    }
+  ];
+
+  // Convertir a JSON y guardar en localStorage
+  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
+
+    const users = JSON.parse(localStorage.getItem("usuarios")) || [];
+
+    const userFound = users.find(
+      (user) => user.correo === email && user.password === password
+    );
+
+    if (userFound) {
+      console.log("Encontrado");
+    } else {
+      console.log("No encontrado");
+    }
   };
 
   return (
