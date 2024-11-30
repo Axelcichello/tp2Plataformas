@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "../context/AuthContext";
 import "../LoginForm.css"; // Archivo CSS para los estilos
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 const LoginForm = () => {
+  const {login} = useContext(AuthContext)
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -27,21 +29,16 @@ const LoginForm = () => {
   // Convertir a JSON y guardar en localStorage
   localStorage.setItem("usuarios", JSON.stringify(usuarios));
 
-  const handleSubmit = (e) => {
+  const handleLogin = (e) => {
     e.preventDefault();
     console.log("Email:", email);
     console.log("Password:", password);
 
-    const users = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-    const userFound = users.find(
-      (user) => user.correo === email && user.password === password
-    );
-
-    if (userFound) {
-      console.log("Encontrado");
-    } else {
-      console.log("No encontrado");
+    
+    if(!login(email, password)){
+      console.log('Credenciales incorrectas')
+    }else{
+      console.log('credenciales correctas')
     }
   };
 
@@ -52,7 +49,7 @@ const LoginForm = () => {
       <div className="login-container">
         <div className="login-card">
           <h2>Iniciar Sesión</h2>
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleLogin}>
             <div className="input-group">
               <label htmlFor="email">Correo Electrónico</label>
               <input
