@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import agregarProductoImg from "../assets/images/agregar-producto.png";
 import agregarUsuarioImg from "../assets/images/agregar-usuario.png";
-import ModificarProducto from "./ModificarProduto";
+import ModificarProducto from "./ModificarProducto";
 
 import { useNavigate } from "react-router-dom"; // Importa useNavigate para la navegación
 
@@ -20,7 +20,7 @@ const AdminPanel = () => {
           {/* Carta para Cargar Mochilas */}
           <div className="carta">
             <img src={agregarProductoImg} alt="Agregar Producto" className="imagen-carta" />
-            <h2 className="subtitulo">Ver Mochilas</h2>
+            <h2 className="subtitulo">Mochilas</h2>
             <button className="boton-amarillo" onClick={() => navigate("/productostabla")}>
               Ver Mochilas
             </button>
@@ -29,9 +29,9 @@ const AdminPanel = () => {
           {/* Carta para Agregar Usuario */}
           <div className="carta">
             <img src={agregarUsuarioImg} alt="Agregar Usuario" className="imagen-carta" />
-            <h2 className="subtitulo">Agregar Usuario</h2>
-            <button className="boton-amarillo" onClick={() => navigate("/agregar-usuario")}>
-              Ir a Agregar Usuario
+            <h2 className="subtitulo">usuarios</h2>
+            <button className="boton-amarillo" onClick={() => navigate("/usuariostabla")}>
+              Ver Usuario
             </button>
           </div>
         </div>
