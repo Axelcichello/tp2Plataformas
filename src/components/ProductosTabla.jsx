@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
 import AgregarProducto from './AgregarProducto';
-import ModificarProducto from './ModificarProduto';
+import ModificarProducto from './ModificarProducto';
 // import '../index.css';
 
 const ProductosTable = () => {
