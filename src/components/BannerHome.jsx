@@ -6,7 +6,7 @@ const BannerHome = () => {
       <div className="overlay">
         <h2 className="titulo-banner">¿Estás buscando la mochila ideal?</h2>
         <p className="subtitulo-banner">Consúltanos por nuestros modelos personalizados y a medida</p>
-        <a href="#" className="boton-amarillo">Contáctanos</a>
+        <a href="/Contact" className="boton-amarillo">Contáctanos</a>
       </div>
     </section>
   );

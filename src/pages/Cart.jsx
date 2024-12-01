@@ -5,6 +5,19 @@ import Footer from "../components/Footer";
 const Cart = () => {
   const carrito = JSON.parse(localStorage.getItem("cart")) || [];
 
+  const finalizarCompra = (e) => {
+    // Prevenir la acción por defecto del botón si está dentro de un formulario
+    e.preventDefault();
+
+    // Limpiar el carrito en localStorage
+    localStorage.removeItem("cart");
+
+    window.location.reload();
+
+    // Opcional: Redirigir al usuario a otra página (por ejemplo, a una página de éxito)
+    alert("Compra completada. ¡Gracias por tu compra!");
+  };
+
   const removeFromCart = (productId) => {
     // Filtrar el carrito para eliminar el producto por ID
     const updatedCart = carrito.filter((product) => product.id !== productId);
@@ -32,7 +45,11 @@ const Cart = () => {
                 <img
                   src={product.imagen}
                   alt={product.nombre}
-                  style={{ width: "50px", height: "auto", marginRight: "10px" }}
+                  style={{
+                    width: "400px",
+                    height: "auto",
+                    marginRight: "10px",
+                  }}
                 />
                 <span>{product.nombre}</span>
                 <span>${product.precio}</span>
@@ -46,6 +63,12 @@ const Cart = () => {
                 </button>
               </div>
             ))}
+
+            <div className="centrado">
+              <button className="boton-verde" onClick={finalizarCompra}>
+                Completar compra
+              </button>
+            </div>
           </div>
         )}
       </main>
