@@ -9,7 +9,7 @@ const Header = () => {
 
   const productosGuardados = localStorage.getItem("productos");
 
-  if (JSON.parse(productosGuardados).length === 0) {
+  if (!productosGuardados || JSON.parse(productosGuardados).length === 0) {
     // Convertir a JSON y guardar en localStorage
     localStorage.setItem("productos", JSON.stringify(productos));
     console.log("Productos cargados en localStorage");
