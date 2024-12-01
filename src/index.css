@@ -469,17 +469,31 @@ form .boton-amarillo{
   margin-bottom: 4rem;
 }
 
-/* Si quieres personalizar algo más para diferenciarlos */
-.agregar-usuario .formulario,
-.agregar-producto .formulario {
-  max-width: 500px;
-  margin: 0 auto;
+.cartas-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 2rem;
+  margin-top: 3rem;
 }
 
-.agregar-usuario .boton-amarillo,
-.agregar-producto .boton-amarillo {
-  background-color: #ff9800; /* Un color naranja más vibrante si lo prefieres */
+.carta {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  width: 45%; /* Ajusta según el diseño */
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
 }
+
+.imagen-carta {
+  width: 100%;
+  height: auto;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 1rem;
+}
+
+/*CARRITO*/
 
 
 .producto-carrito {
@@ -506,3 +520,43 @@ form .boton-amarillo{
 .boton-rojo:hover {
   background-color: darkred;
 }
+
+/*TABLA DE PRODUCTOS*/
+.tabla-productos {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 2rem;
+}
+
+.tabla-productos th,
+.tabla-productos td {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.tabla-productos th {
+  background-color: #f2f2f2;
+}
+
+.boton-am {
+  background-color: orange;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.boton-am:hover {
+  background-color: darkorange;
+}
+
+.producto-imagen {
+  height: 50px;  /* Ajusta esto según la altura de tu fila */
+  width: auto;   /* Mantiene la proporción */
+  object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+  display: block;
+  margin: 0 auto;
+}
+

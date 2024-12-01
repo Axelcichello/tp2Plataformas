@@ -10,6 +10,10 @@ import Product from './pages/Product';
 import Login from './pages/Login';
 import Cart from './pages/Cart';
 import AdminPanel from './components/AdminPanel';
+import AgregarProducto from './components/AgregarProducto';
+import AgregarUsuario from './components/AgregarUsuario';
+import ProductosTable from './components/ProductosTabla';
+import ModificarProducto from './components/ModificarProduto';
 
 function App() {
   return (
@@ -22,6 +26,10 @@ function App() {
         <Route path="/product/:id" element={<Product />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminPanel/>} />
+        <Route path="/productostabla" element={<ProductosTable/>} />
+        <Route path="/agregar-producto" element={<AgregarProducto />} />
+        <Route path="/agregar-usuario" element={<AgregarUsuario />} />
+        <Route path="/modificar-producto/:id" element={<ModificarProducto />} />
         <Route path="/cart" element={<Cart/>} />
       </Routes>
     </Router>

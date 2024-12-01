@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import Header from "./Header";
+import Footer from "./Footer";
 
 const AgregarProducto = () => {
   // Estado para manejar los campos del formulario
@@ -38,6 +40,8 @@ const AgregarProducto = () => {
 
   return (
     <div>
+    <Header />
+    <main className="contenedor">
       <h2 className="subtitulo">Agregar Nuevo Producto</h2>
       <form onSubmit={handleSubmit} className="formulario agregar-producto">
         <label htmlFor="nombre">Nombre del Producto</label>
@@ -58,14 +62,14 @@ const AgregarProducto = () => {
           required
         />
 
-        <label htmlFor="imagen">URL de Imagen</label>
+        <label htmlFor="imagen">Seleccionar Imagen</label>
         <input
-          type="text"
-          id="imagen"
-          value={imagen}
-          onChange={(e) => setImagen(e.target.value)}
+          type="file"
+         id="imagen"
+         onChange={(e) => handleImagenChange(e)}
           required
         />
+
 
         <label htmlFor="descripcion">Descripción</label>
         <textarea
@@ -77,6 +81,8 @@ const AgregarProducto = () => {
 
         <button type="submit" className="boton-amarillo">Agregar Producto</button>
       </form>
+      </main>
+      <Footer />
     </div>
   );
 };
