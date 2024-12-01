@@ -4,41 +4,28 @@ import "../LoginForm.css"; // Archivo CSS para los estilos
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+import usuarios from "../assets/js/usuarios";
+
 const LoginForm = () => {
-  const {login} = useContext(AuthContext)
+  const { login } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const usuarios = [
-    {
-      id: 1,
-      nombre: "admin",
-      correo: "admin@admin.com",
-      password: "admin",
-      rol: 1 //Rol de administrador
-    },
-    {
-      id: 2,
-      nombre: "Hernan Crespo",
-      correo: "hernancrespo@gmail.com",
-      password: "1234",
-      rol: 2 //Rol de cliente
-    }
-  ];
+  const usuariosGuardados = localStorage.getItem("usuarios");
 
-  // Convertir a JSON y guardar en localStorage
-  localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  if (!usuariosGuardados) {
+    // Convertir a JSON y guardar en localStorage
+    localStorage.setItem("usuarios", JSON.stringify(usuarios));
+  }
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log("Email:", email);
-    console.log("Password:", password);
-
     
-    if(!login(email, password)){
-      console.log('Credenciales incorrectas')
-    }else{
-      console.log('credenciales correctas')
+
+    if (!login(email, password)) {
+      console.log("Credenciales incorrectas");
+    } else {
+      console.log("credenciales correctas");
     }
   };
 

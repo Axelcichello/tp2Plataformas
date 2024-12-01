@@ -8,6 +8,7 @@ import Contact from './pages/Contact';
 import Gallery from './pages/Gallery';
 import Product from './pages/Product';
 import Login from './pages/Login';
+import Cart from './pages/Cart';
 import AdminPanel from './components/AdminPanel';
 
 function App() {
@@ -19,8 +20,9 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/product/:id" element={<Product />} />
-        <Route path="/Login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminPanel/>} />
+        <Route path="/cart" element={<Cart/>} />
       </Routes>
     </Router>
   );

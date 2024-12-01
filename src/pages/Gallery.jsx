@@ -31,7 +31,7 @@ const Gallery = () => {
                   <p className="producto-nombre">{producto.nombre}</p>
                   <p className="producto-precio">${producto.precio}</p>
 
-                  <Link to={`/Product/${producto.id}`} className="boton-amarillo">
+                  <Link to={`/product/${producto.id}`} className="boton-amarillo">
                     Ver Producto
                   </Link>
                 </div>

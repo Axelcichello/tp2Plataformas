@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import mochila6 from "../assets/images/mochila6.jpg";
 import { useParams } from "react-router-dom";
 
 const Product = () => {
@@ -12,7 +11,37 @@ const Product = () => {
     JSON.parse(localStorage.getItem("productos")) || [];
   const producto = productosGuardados.find((item) => item.id === parseInt(id));
 
-  console.log(producto);
+  const addToCart = (e) => {
+    e.preventDefault(); // Evitar que el formulario se envíe y recargue la página
+
+    const quantity = parseInt(e.target.cantidad.value); // Obtener la cantidad seleccionada
+
+    if (!quantity || quantity <= 0) {
+      alert("Por favor, ingresa una cantidad válida.");
+      return;
+    }
+
+    // Obtener el carrito actual desde localStorage
+    const cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // Crear un objeto de producto con la información seleccionada
+    const newProduct = {
+      ...producto,
+      cantidad: quantity,
+    };
+
+    // Añadir el producto al carrito
+    const updatedCart = [...cart, newProduct];
+
+    // Guardar el carrito actualizado en localStorage
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+
+    alert(`${producto.nombre} ha sido añadido al carrito.`);
+  };
+
+  if (!producto) {
+    return <p>Producto no encontrado</p>;
+  }
 
   return (
     <div>
@@ -24,23 +53,26 @@ const Product = () => {
           <img src={producto.imagen} alt={producto.nombre} />
 
           <div className="mochila-descripcion">
-            <p>
-              {producto.descripcion}
-            </p>
+            <p>{producto.descripcion}</p>
 
             <p>${producto.precio}</p>
 
-            <form action="#" className="formulario">
-              <select name="talle" id="talle">
-                <option value="S">S</option>
-                <option value="M">M</option>
-                <option value="L">L</option>
-                <option value="XL">XL</option>
-              </select>
+            <form action="#" className="formulario" onSubmit={addToCart}>
+              
 
-              <input type="number" placeholder="cantidad" min="1" />
+              <input
+                type="number"
+                id="cantidad"
+                name="cantidad"
+                placeholder="cantidad"
+                min="1"
+              />
 
-              <input type="submit" className="boton-amarillo" value="comprar" />
+              <input
+                type="submit"
+                className="boton-amarillo"
+                value="Añadir al carro"
+              />
             </form>
           </div>
         </div>

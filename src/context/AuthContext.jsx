@@ -8,7 +8,9 @@ export const AuthProvider = ({ children }) => {
   // Cargar estado inicial desde LocalStorage
   useEffect(() => {
     const session = localStorage.getItem("isAuthenticated");
-    setIsAuthenticated(session === "true");
+    if (session) {
+      setIsAuthenticated(true);
+    }
   }, []);
 
   // Función para iniciar sesión

@@ -21,7 +21,6 @@ const MasVendidos = () => {
     }
   }, []);
 
-  console.log(JSON.parse(localStorage.getItem("productos")));
 
   return (
     <section className="contenedor">

@@ -453,6 +453,12 @@ form .boton-amarillo{
       gap: 2rem;
       grid-template-columns: repeat(1, 1fr);
   }
+
+  .iconos-sesion-cart{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+  }
 }
 
 /*ADMIN*/
@@ -473,4 +479,30 @@ form .boton-amarillo{
 .agregar-usuario .boton-amarillo,
 .agregar-producto .boton-amarillo {
   background-color: #ff9800; /* Un color naranja más vibrante si lo prefieres */
+}
+
+
+.producto-carrito {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.producto-carrito img {
+  width: 50px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.boton-rojo {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+.boton-rojo:hover {
+  background-color: darkred;
 }
