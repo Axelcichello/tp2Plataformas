@@ -423,10 +423,19 @@ form .boton-amarillo{
   text-decoration: none;
   display: flex;
   align-items: center;
+  border: none;
+  background: none;
+  cursor: pointer;
 }
 
 .login-icon:hover {
   color: #ff9900; /* Color al pasar el mouse */
+}
+
+
+.iconos-sesion-cart{
+  display: flex;
+  gap: 2rem;
 }
 
 

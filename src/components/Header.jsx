@@ -1,7 +1,7 @@
-import React, { useContext } from 'react';
+import React, { useContext } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { Link } from "react-router-dom";
-import { FaUserCircle, FaSignOutAlt } from "react-icons/fa"; // Importamos el ícono de React Icons
+import { FaUserCircle, FaSignOutAlt , FaShoppingCart } from "react-icons/fa"; // Importamos el ícono de React Icons
 
 const Header = () => {
   const { isAuthenticated, logout } = useContext(AuthContext);
@@ -111,13 +111,19 @@ const Header = () => {
 
         <div>
           {isAuthenticated ? (
-            <button
-              onClick={logout}
-              className="logout-icon"
-              title="Cerrar sesión"
-            >
-              <FaSignOutAlt size={40} />
-            </button>
+            <div className="iconos-sesion-cart">
+              <button
+                onClick={logout}
+                className="login-icon"
+                title="Cerrar sesión"
+              >
+                <FaSignOutAlt  size={40} />
+              </button>
+
+              <Link to="/Cart" className="login-icon">
+                <FaShoppingCart size={40} title="Carrito" />
+              </Link>
+            </div>
           ) : (
             <Link to="/Login" className="login-icon">
               <FaUserCircle size={40} title="Iniciar sesión" />
