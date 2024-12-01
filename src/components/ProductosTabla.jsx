@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from './Header';
 import Footer from './Footer';
-import productosData from '../assets/js/productos';
 import AgregarProducto from './AgregarProducto';
 import ModificarProducto from './ModificarProduto';
 // import '../index.css';
 
 const ProductosTable = () => {
-  const [productos, setProductos] = useState(productosData); 
+  const [productos, setProductos] = useState([]); 
   const navigate = useNavigate(); 
+
+  //cargar los datos del localstorage
+  useEffect(() => {
+    const productosGuardados = localStorage.getItem("productos");
+    if (productosGuardados) {
+      setProductos(JSON.parse(productosGuardados));
+    }
+  }, []);
 
   // Función para eliminar un producto
   const eliminarProducto = (id) => {

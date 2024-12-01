@@ -14,6 +14,9 @@ const AgregarProducto = () => {
     e.preventDefault();
 
     // Crear un nuevo producto
+
+
+
     const nuevoProducto = {
       id: new Date().getTime(), // Generar un ID único basado en la fecha
       nombre,
