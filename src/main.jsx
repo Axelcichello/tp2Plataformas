@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
 import { AuthProvider } from "./context/AuthContext";
-import "./index.css"; // Opcional, si tienes estilos globales
+import "./index.css";
 import "./normalizer.css";
 
 ReactDOM.createRoot(document.getElementById("root")).render(

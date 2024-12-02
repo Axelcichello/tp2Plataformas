@@ -6,7 +6,6 @@ import { useParams } from "react-router-dom";
 const Product = () => {
   const { id } = useParams(); // Obtener el ID de la URL
 
-  // Aquí podrías buscar los datos del producto en `localStorage` u otra fuente
   const productosGuardados =
     JSON.parse(localStorage.getItem("productos")) || [];
   const producto = productosGuardados.find((item) => item.id === parseInt(id));
@@ -14,7 +13,7 @@ const Product = () => {
   const addToCart = (e) => {
     e.preventDefault(); // Evitar que el formulario se envíe y recargue la página
 
-    const quantity = parseInt(e.target.cantidad.value); // Obtener la cantidad seleccionada
+    const quantity = parseInt(e.target.cantidad.value);
 
     if (!quantity || quantity <= 0) {
       alert("Por favor, ingresa una cantidad válida.");
@@ -24,13 +23,13 @@ const Product = () => {
     // Obtener el carrito actual desde localStorage
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-    // Crear un objeto de producto con la información seleccionada
+    // Crear un objeto de producto con los productos seleccionados
     const newProduct = {
       ...producto,
       cantidad: quantity,
     };
 
-    // Añadir el producto al carrito
+    // Añade el producto al carrito
     const updatedCart = [...cart, newProduct];
 
     // Guardar el carrito actualizado en localStorage

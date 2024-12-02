@@ -1,9 +1,17 @@
-import React from 'react';
-import { Navigate } from 'react-router-dom';
-import { checkAuth } from '../utils/auth';
+import React, { useContext } from "react";
+import { Navigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
-const RutasProtegidas = ({ element: Component }) => {
-  return checkAuth() ? Component : <Navigate to="/login" />;
+const ProtectedRoute = ({ element }) => {
+  const { user } = useContext(AuthContext);
+
+  // Si no está autenticado o no es administrador, redirigimos al login
+  if (!user || user.rol !== 1) {
+    return <Navigate to="/login" />;
+  }
+
+  // Si está autenticado y es administrador, muestra el componente
+  return element;
 };
 
-export default RutasProtegidas;
+export default ProtectedRoute;

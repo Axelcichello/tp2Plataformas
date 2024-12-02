@@ -3,44 +3,43 @@ import React, { createContext, useState, useEffect } from "react";
 export const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
-  const [isAuthenticated, setIsAuthenticated] = useState(null); // Inicializa con null si no hay usuario autenticado.
+  const [user, setUser] = useState(null); // Estado inicial del usuario autenticado
 
   // Cargar estado inicial desde LocalStorage
   useEffect(() => {
-    const session = localStorage.getItem("isAuthenticated");
-    if (session) {
-      setIsAuthenticated(true);
+    const storedUser = JSON.parse(localStorage.getItem("user"));
+    if (storedUser) {
+      setUser(storedUser);
     }
   }, []);
 
   // Función para iniciar sesión
   const login = (email, password) => {
     const users = JSON.parse(localStorage.getItem("usuarios")) || [];
-    const userExists = users.find(
+    const foundUser = users.find(
       (user) => user.correo === email && user.password === password
     );
 
-    if (userExists) {
+    if (foundUser) {
       // Guarda los datos del usuario autenticado
-      setIsAuthenticated(userExists);
+      setUser(foundUser);
 
       // También guarda los datos en localStorage para persistencia
-      localStorage.setItem("isAuthenticated", JSON.stringify(userExists));
+      localStorage.setItem("user", JSON.stringify(foundUser));
 
       return true; // Login exitoso
     }
     return false; // Credenciales incorrectas
   };
 
-  // Función para cerrar sesión
+   // Función para cerrar sesión
   const logout = () => {
-    setIsAuthenticated(false);
-    localStorage.setItem("isAuthenticated", "false");
-    localStorage.removeItem("isAuthenticated");
+    setUser(null);
+    localStorage.removeItem("user");
   };
 
   return (
-    <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+    <AuthContext.Provider value={{ user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

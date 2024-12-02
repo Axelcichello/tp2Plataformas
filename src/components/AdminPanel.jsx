@@ -3,9 +3,8 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import agregarProductoImg from "../assets/images/agregar-producto.png";
 import agregarUsuarioImg from "../assets/images/agregar-usuario.png";
-import ModificarProducto from "./ModificarProducto";
 
-import { useNavigate } from "react-router-dom"; // Importa useNavigate para la navegación
+import { useNavigate } from "react-router-dom"; 
 
 const AdminPanel = () => {
   const navigate = useNavigate(); // Hook de navegación

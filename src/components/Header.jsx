@@ -5,7 +5,7 @@ import { FaUserCircle, FaSignOutAlt, FaShoppingCart } from "react-icons/fa"; // 
 import productos from "../assets/js/productos";
 
 const Header = () => {
-  const { isAuthenticated, logout } = useContext(AuthContext);
+  const { user, logout } = useContext(AuthContext);
 
   const productosGuardados = localStorage.getItem("productos");
 
@@ -31,8 +31,10 @@ const Header = () => {
         </nav>
 
         <div>
-          {isAuthenticated  ? (
+          {user ? (
             <div className="iconos-sesion-cart">
+              <span className="username">{user.nombre}</span>{" "}
+              {/* Muestra el nombre del usuario */}
               <button
                 onClick={logout}
                 className="login-icon"
@@ -40,7 +42,6 @@ const Header = () => {
               >
                 <FaSignOutAlt size={40} />
               </button>
-
               <Link to="/cart" className="login-icon">
                 <FaShoppingCart size={40} title="Carrito" />
               </Link>

@@ -14,7 +14,6 @@ const Cart = () => {
 
     window.location.reload();
 
-    // Opcional: Redirigir al usuario a otra página (por ejemplo, a una página de éxito)
     alert("Compra completada. ¡Gracias por tu compra!");
   };
 
@@ -25,7 +24,6 @@ const Cart = () => {
     // Actualizar el carrito en localStorage
     localStorage.setItem("cart", JSON.stringify(updatedCart));
 
-    // Re-renderizar el componente (esto solo sucederá cuando se recargue la página)
     window.location.reload();
   };
 

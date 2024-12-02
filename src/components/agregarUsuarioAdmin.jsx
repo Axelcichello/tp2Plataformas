@@ -25,6 +25,7 @@ const AgregarUsuarioAdmin = () => {
 
     usuariosGuardados.push(nuevoUsuario);
     localStorage.setItem("usuarios", JSON.stringify(usuariosGuardados));
+    alert("Usuario agregado exitosamente");
     navigate("/usuariostabla");
   };
 

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../LoginForm.css"; // Archivo CSS para los estilos
+import "../LoginForm.css";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 

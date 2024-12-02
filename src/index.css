@@ -521,22 +521,22 @@ form .boton-amarillo{
   background-color: darkred;
 }
 
-/*TABLA DE PRODUCTOS*/
-.tabla-productos {
+/*TABLA DE PRODUCTOS/USUARIOS*/
+.tabla {
   width: 100%;
   border-collapse: collapse;
   margin-top: 2rem;
 }
 
-.tabla-productos th,
-.tabla-productos td {
+.tabla th,
+.tabla td {
   border: 1px solid #ddd;
   padding: 1rem;
   text-align: center;
   vertical-align: middle;
 }
 
-.tabla-productos th {
+.tabla th {
   background-color: #f2f2f2;
 }
 
@@ -553,10 +553,9 @@ form .boton-amarillo{
 }
 
 .producto-imagen {
-  height: 50px;  /* Ajusta esto según la altura de tu fila */
-  width: auto;   /* Mantiene la proporción */
-  object-fit: cover; /* Asegura que la imagen se ajuste sin deformarse */
+  height: 50px;
+  width: auto;
+  object-fit: cover;
   display: block;
   margin: 0 auto;
 }
-

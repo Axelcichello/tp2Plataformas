@@ -38,14 +38,14 @@ const ModificarProducto = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Obtener los productos existentes del LocalStorage
+    // Obtiene los productos existentes del LocalStorage
     const productosGuardados = JSON.parse(localStorage.getItem("productos")) || [];
 
-    // Encontrar el índice del producto a modificar
+    // encuentra el índice del producto a modificar
     const index = productosGuardados.findIndex((producto) => producto.id === parseInt(id));
 
     if (index !== -1) {
-      // Actualizar los datos del producto
+      // Actualiza los datos del producto
       productosGuardados[index] = {
         id: parseInt(id), // El ID no se cambia
         nombre,
@@ -54,10 +54,10 @@ const ModificarProducto = () => {
         descripcion,
       };
 
-      // Guardar los productos actualizados en el LocalStorage
+      // Guarda los productos actualizados en el LocalStorage
       localStorage.setItem("productos", JSON.stringify(productosGuardados));
 
-      // Redirigir al listado de productos
+      // Redirigie al listado de productos
       navigate("/productostabla");
     }
   };

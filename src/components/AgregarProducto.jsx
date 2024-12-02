@@ -1,22 +1,22 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const AgregarProducto = () => {
-  // Estado para manejar los campos del formulario
-  const [nombre, setNombre] = useState("");
-  const [precio, setPrecio] = useState("");
-  const [imagen, setImagen] = useState("");
-  const [descripcion, setDescripcion] = useState("");
+  const AgregarProducto = () => {
+    const navigate = useNavigate();
+  
+    // Estado para manejar los campos del formulario
+    const [nombre, setNombre] = useState("");
+    const [precio, setPrecio] = useState("");
+    const [imagen, setImagen] = useState("");
+    const [descripcion, setDescripcion] = useState("");
 
   // Función para manejar el envío del formulario
   const handleSubmit = (e) => {
     e.preventDefault();
 
     // Crear un nuevo producto
-
-
-
     const nuevoProducto = {
       id: new Date().getTime(), // Generar un ID único basado en la fecha
       nombre,
@@ -33,7 +33,8 @@ const AgregarProducto = () => {
     
     // Guardar los productos actualizados en el LocalStorage
     localStorage.setItem("productos", JSON.stringify(productosGuardados));
-
+    alert("Usuario agregado exitosamente");
+    navigate("/productostabla");
     // Limpiar los campos del formulario
     setNombre("");
     setPrecio("");
@@ -68,8 +69,8 @@ const AgregarProducto = () => {
         <label htmlFor="imagen">Seleccionar Imagen</label>
         <input
           type="file"
-         id="imagen"
-         onChange={(e) => handleImagenChange(e)}
+        id="imagen"
+        onChange={(e) => handleImagenChange(e)}
           required
         />
 

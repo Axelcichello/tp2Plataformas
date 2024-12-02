@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
-import "../LoginForm.css"; // Archivo CSS para los estilos
+import "../LoginForm.css"; 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
@@ -9,7 +9,7 @@ import usuarios from "../assets/js/usuarios";
 
 const LoginForm = () => {
   const navigate = useNavigate();
-  const { login } = useContext(AuthContext);
+  const { login, user } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -26,12 +26,12 @@ const LoginForm = () => {
     if (!login(email, password)) {
       console.log("Credenciales incorrectas");
     } else {
-      console.log("credenciales correctas");
-      const session = JSON.parse(localStorage.getItem("isAuthenticated"));
-      if (session.rol === 1) {
+      console.log("Credenciales correctas");
+      console.log(user);
+      if (user && user.rol === 1) {
         navigate("/admin");
-      }else{
-        navigate("/")
+      } else {
+        navigate("/");
       }
     }
   };
